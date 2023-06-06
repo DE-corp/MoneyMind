@@ -8,9 +8,9 @@ namespace DAL_SQLLite
 {
     public class Spend
     {
-        public int ID;
-        public decimal Cost;
+        public int SpendId { get; set; }
+        public decimal Cost { get; set; }
 
-        public Category category;
+        public Category Category { get; set; }
     }
 }

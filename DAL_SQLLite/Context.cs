@@ -7,24 +7,20 @@ using System.Threading.Tasks;
 
 namespace DAL_SQLLite
 {
-    public class Costs : DbContext
+    public class CostsDbContext : DbContext
     {
-        public DbSet<Spend> Spends { get; set; }
+        public DbSet<Spend> Spends{get; set;}
         public DbSet<Category> Categories { get; set; }
 
-        public Costs()
+        public CostsDbContext()
         {
             Database.EnsureCreated();
         }
 
-        protected override void OnModelCreating(ModelBuilder builder)
-        {
-            base.OnModelCreating(builder);
-        }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlite("Filename=CostsDB.db");
+            optionsBuilder.UseSqlite("Data Source=CostsDB.db");
         }
     }
 }

@@ -8,7 +8,7 @@ namespace DAL_SQLLite
 {
     public class Category
     {
-        public int ID;
+        public int Id;
         public string Name;
     }
 }

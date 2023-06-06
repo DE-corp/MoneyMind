@@ -5,7 +5,7 @@ internal class Program
     {
         var builder = WebApplication.CreateBuilder(args);
 
-        builder.Services.AddDbContext<Costs>();
+        builder.Services.AddDbContext<CostsDbContext>();
 
 
         // Add services to the container.
