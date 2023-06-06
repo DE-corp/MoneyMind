@@ -9,7 +9,7 @@ namespace DAL_SQLLite
     public class Spend
     {
         public int ID;
-        public decimal Spend;
+        public decimal Cost;
 
         public Category category;
     }

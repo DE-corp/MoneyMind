@@ -9,7 +9,7 @@ namespace DAL_SQLLite
 {
     public class Costs : DbContext
     {
-        public DbSet<Spend> Spending { get; set; }
+        public DbSet<Spend> Spends { get; set; }
         public DbSet<Category> Categories { get; set; }
 
         public Costs()
@@ -20,6 +20,11 @@ namespace DAL_SQLLite
         protected override void OnModelCreating(ModelBuilder builder)
         {
             base.OnModelCreating(builder);
-        } 
+        }
+
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        {
+            optionsBuilder.UseSqlite("Filename=CostsDB.db");
+        }
     }
 }
