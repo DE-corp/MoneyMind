@@ -17,9 +17,9 @@ namespace DAL_SQLLite
             Database.EnsureCreated();
         }
 
-        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        protected override void OnModelCreating(ModelBuilder builder)
         {
-            optionsBuilder.UseSqlite("Filename=SQBase.db");
-        }
+            base.OnModelCreating(builder);
+        } 
     }
 }

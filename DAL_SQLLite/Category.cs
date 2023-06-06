@@ -6,7 +6,9 @@ using System.Threading.Tasks;
 
 namespace DAL_SQLLite
 {
-    internal class Category
+    public class Category
     {
+        public int ID;
+        public string Name;
     }
 }

@@ -6,7 +6,11 @@ using System.Threading.Tasks;
 
 namespace DAL_SQLLite
 {
-    internal class Spending
+    public class Spend
     {
+        public int ID;
+        public decimal Spend;
+
+        public Category category;
     }
 }
