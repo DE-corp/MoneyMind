@@ -1,4 +1,6 @@
 using DAL_SQLLite;
+using DAL_SQLLite.Repository;
+
 internal class Program
 {
     private static void Main(string[] args)
@@ -6,6 +8,9 @@ internal class Program
         var builder = WebApplication.CreateBuilder(args);
 
         builder.Services.AddDbContext<CostsDbContext>();
+
+        builder.Services.AddTransient<IRepository<Category>,Repository<Category>>();
+        builder.Services.AddTransient<IRepository<Spend>, Repository<Spend>>();
 
 
         // Add services to the container.
