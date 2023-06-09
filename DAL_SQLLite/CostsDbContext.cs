@@ -1,4 +1,6 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using DAL_SQLLite.Models;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace DAL_SQLLite
 {
-    public class CostsDbContext : DbContext
+    public class CostsDbContext : IdentityDbContext<User>
     {
         public DbSet<Spend> Spends{get; set;}
         public DbSet<Category> Categories { get; set; }

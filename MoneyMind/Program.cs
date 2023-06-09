@@ -1,4 +1,5 @@
 using DAL_SQLLite;
+using DAL_SQLLite.Models;
 using DAL_SQLLite.Repository;
 
 internal class Program
@@ -8,6 +9,15 @@ internal class Program
         var builder = WebApplication.CreateBuilder(args);
 
         builder.Services.AddDbContext<CostsDbContext>();
+
+        builder.Services.AddIdentityCore<User>(opts =>
+        {
+            opts.Password.RequiredLength = 5;
+            opts.Password.RequireNonAlphanumeric = false;
+            opts.Password.RequireLowercase = false;
+            opts.Password.RequireUppercase = false;
+            opts.Password.RequireDigit = false;
+        });
 
         builder.Services.AddTransient<IRepository<Category>,Repository<Category>>();
         builder.Services.AddTransient<IRepository<Spend>, Repository<Spend>>();

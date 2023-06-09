@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DAL_SQLLite
+namespace DAL_SQLLite.Models
 {
     public class Spend
     {
