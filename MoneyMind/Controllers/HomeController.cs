@@ -14,8 +14,9 @@ namespace MoneyMind.Controllers
             _logger = logger;
         }
 
-        public IActionResult Index()
+        public IActionResult Index(CostsDbContext costsDb)
         {
+            costsDb.Spends.AsQueryable().Count();
             return View();
         }
 

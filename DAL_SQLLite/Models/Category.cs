@@ -8,7 +8,7 @@ namespace DAL_SQLLite.Models
 {
     public class Category
     {
-        public int Id;
-        public string Name;
+        public int CategoryId { get; set; }
+        public string Name { get; set; }
     }
 }

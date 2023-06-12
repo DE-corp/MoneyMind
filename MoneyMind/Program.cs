@@ -11,14 +11,15 @@ internal class Program
 
         builder.Services.AddDbContext<CostsDbContext>();
 
-        //builder.Services.AddIdentityCore<User>(opts =>
-        //{
-        //    opts.Password.RequiredLength = 5;
-        //    opts.Password.RequireNonAlphanumeric = false;
-        //    opts.Password.RequireLowercase = false;
-        //    opts.Password.RequireUppercase = false;
-        //    opts.Password.RequireDigit = false;
-        //});
+        builder.Services.AddIdentityCore<User>(opts =>
+        {
+            opts.Password.RequiredLength = 5;
+            opts.Password.RequireNonAlphanumeric = false;
+            opts.Password.RequireLowercase = false;
+            opts.Password.RequireUppercase = false;
+            opts.Password.RequireDigit = false;
+        })
+            .AddEntityFrameworkStores<CostsDbContext>();
 
         builder.Services.AddTransient<IRepository<Category>,Repository<Category>>();
         builder.Services.AddTransient<IRepository<Spend>, Repository<Spend>>();
